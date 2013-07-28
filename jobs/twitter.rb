@@ -29,7 +29,7 @@ class TwitterJob
   end
 end
 
-logger = Logger.new(File.join(Dir.pwd, 'logs', 'relig.log'), 'daily')
+logger = Logger.new(STDOUT)
 @jobs = {}
 TwitterJob::TERMS.map(&:downcase).each do |term|
   @jobs[term] = TwitterJob.new(term)
