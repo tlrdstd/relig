@@ -24,7 +24,6 @@ class TwitterJob
   end
 
   def count
-    purge
     @store.size
   end
 
@@ -66,5 +65,11 @@ end
 SCHEDULER.every '1s' do
   @jobs.each_pair do |name, job|
     send_event(name, {current: job.count})
+  end
+end
+
+SCHEDULER.every '1m' do
+  @jobs.each_pair do |name, job|
+    job.purge
   end
 end
