@@ -1,0 +1,3 @@
+todo: persistence
+todo: list of tweets
+todo: setup separate prod/dev twitter accounts
