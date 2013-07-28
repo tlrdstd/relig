@@ -146,7 +146,7 @@ h3 {
 .gs_w {
   width: 100%;
   display: table;
-  cursor: pointer;
+  cursor: default;
 }
 
 .widget {
@@ -292,6 +292,10 @@ h3 {
   a {
     text-decoration: underline;
   }
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 // ----------------------------------------------------------------------------

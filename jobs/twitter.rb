@@ -40,19 +40,10 @@ TwitterJob::TERMS.map(&:downcase).each do |term|
   @jobs[term] = TwitterJob.new(term)
 end
 
-SCHEDULER.every '1s' do
-  @jobs.each_pair do |name, job|
-    send_event(name, {current: job.count})
-  end
-end
-
 SCHEDULER.in '5s' do
   client = TweetStream::Client.new
   client.on_error do |message|
-    logger.error "ERROR!!!! #{message}"
-  end
-  client.on_limit do |skip_count|
-    logger.info "HIT RATE LIMIT: #{skip_count}"
+    logger.error message
   end
   client.on_enhance_your_calm do
     logger.warn "I am NOT ENHANCING MY CALM!!"
@@ -62,5 +53,18 @@ SCHEDULER.in '5s' do
     if term && !term.empty?
       @jobs[term].remember tweet
     end
+  end
+end
+
+SCHEDULER.every '10s' do
+  @jobs.each_pair do |name, job|
+    store = job.instance_variable_get(:@store)
+    send_event("#{name}-list", {comments: store[-10..-1] || store})
+  end
+end
+
+SCHEDULER.every '1s' do
+  @jobs.each_pair do |name, job|
+    send_event(name, {current: job.count})
   end
 end

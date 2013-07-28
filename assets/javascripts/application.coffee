@@ -21,3 +21,6 @@ Dashing.on 'ready', ->
       draggable:
         stop: Dashing.showGridsterInstructions
         start: -> Dashing.currentWidgetPositions = Dashing.getWidgetPositions()
+
+  $('.clickable').click ->
+    window.location = $(this).data 'url'
