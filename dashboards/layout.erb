@@ -10,7 +10,9 @@
   <title><%= "DEV MODE - " if development? %>Religion on Twitter</title>
 
   <!-- The javascript and css are managed by sprockets. The files can be found in the /assets folder-->
-  <script type="text/javascript" src="/assets/application.js"></script>
+  <% unless browser.ie? %>
+    <script type="text/javascript" src="/assets/application.js"></script>
+  <% end %>
   <link rel="stylesheet" href="/assets/application.css">
 
   <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
