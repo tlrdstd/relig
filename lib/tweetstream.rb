@@ -1,9 +1,7 @@
 require 'tweetstream'
-require 'yaml'
-
-auth = YAML.load(File.read('config/twitter.yml'))
 TweetStream.configure do |config|
-  auth.each_pair do |name, value|
-    config.send("#{name}=", value)
-  end
+  config.consumer_key       = ENV['RELIG_CONSUMER_KEY']
+  config.consumer_secret    = ENV['RELIG_CONSUMER_SECRET']
+  config.oauth_token        = ENV['RELIG_OAUTH_TOKEN']
+  config.oauth_token_secret = ENV['RELIG_OAUTH_TOKEN_SECRET']
 end
