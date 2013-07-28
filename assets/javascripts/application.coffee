@@ -5,6 +5,19 @@
 #= require_directory .
 #= require_tree ../../widgets
 
+# override of Dashing Batman filter
+# Show an extra significant digit
+Batman.Filters.shortenedNumber = (num) ->
+  return num if isNaN(num)
+  if num >= 1000000000
+    (num / 1000000000).toFixed(2) + 'B'
+  else if num >= 1000000
+    (num / 1000000).toFixed(2) + 'M'
+  else if num >= 1000
+    (num / 1000).toFixed(2) + 'K'
+  else
+    num
+
 Dashing.on 'ready', ->
   Dashing.widget_margins ||= [5, 5]
   Dashing.widget_base_dimensions ||= [280, 280]
