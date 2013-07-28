@@ -15,17 +15,22 @@ class TwitterJob
   end
 
   def remember tweet
-    @store << tweet.created_at
+    @store << {
+      timestamp: tweet.created_at,
+      name: tweet.user.name,
+      body: tweet.text,
+      avatar: tweet.user.profile_image_url_https
+    }
   end
 
   def count
-    one_hour_ago = Time.now - 3600
-    @store.count{|timestamp| timestamp >= one_hour_ago}
+    purge
+    @store.size
   end
 
   def purge
     one_hour_ago = Time.now - 3600
-    @store.delete_if{|timestamp| timestamp < one_hour_ago}
+    @store.delete_if{|tweet| tweet[:timestamp] < one_hour_ago}
   end
 end
 
@@ -58,8 +63,4 @@ SCHEDULER.in '5s' do
       @jobs[term].remember tweet
     end
   end
-end
-
-SCHEDULER.every '2h' do
-  @jobs.each(&:purge)
 end
