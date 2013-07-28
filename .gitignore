@@ -1,4 +1,4 @@
 .bundle/
-logs/
+logs/*.log
 history.yml
 .env
