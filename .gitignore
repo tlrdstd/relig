@@ -1,1 +1,4 @@
 .bundle/
+config/twitter.yml
+logs/
+history.yml
