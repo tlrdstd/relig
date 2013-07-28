@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'dashing'
+gem 'browser'
 
-## Remove this if you don't need a twitter widget.
-gem 'twitter'
+gem 'tweetstream'
+gem 'oj'
 
-gem 'tzinfo-data'
+group :development do
+  gem 'awesome_print'
+end
