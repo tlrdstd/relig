@@ -25,13 +25,16 @@
       <%= yield %>
     </div>
     <% else %>
+      <a href="http://browsehappy.com/"><img id="iefail-img" src="iefail.png" /></a>
+
       <div id="iefail">
         <div id="iefail-icon">
           <i class="icon-twitter icon-rotate-180 text-error"></i>
         </div>
 
-        <i class="icon-terminal icon-2x icon-border"></i> Relig does not support Internet Explorer. Please try again in <a href="http://browsehappy.com/">Chrome, Firefox, Opera, or Safari.</a>
-    </div>
-  <% end %>
+        <p style="margin-bottom: 10px;"><i class="icon-terminal icon-2x icon-border"></i> Relig does not support Internet Explorer.</p>
+        <p>Please try again in <a href="http://browsehappy.com/">Chrome, Firefox, Opera, or Safari.</a></p>
+      </div>
+    <% end %>
   </body>
 </html>

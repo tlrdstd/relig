@@ -282,7 +282,15 @@ h3 {
     color: #9D261D;
 }
 
+#iefail-img {
+  position: fixed;
+  left: 50%;
+  margin-top: 50px;
+  margin-left: -246px;
+}
+
 #iefail {
+  display: none;
   text-align: center;
 
   #iefail-icon {
