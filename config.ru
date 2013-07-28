@@ -1,4 +1,5 @@
 require 'dashing'
+require 'browser'
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
@@ -7,6 +8,13 @@ configure do
     def protected!
      # Put any authentication code you want in here.
      # This method is run before accessing any resource.
+    end
+
+    def browser
+      @browser ||= Browser.new(
+        accept_language: '',
+        ua: request.user_agent
+      )
     end
   end
 end
