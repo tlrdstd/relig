@@ -13,20 +13,22 @@
   <link rel="stylesheet" href="/assets/application.css">
 
   <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
 
 </head>
   <body>
+    <% unless browser.ie? %>
     <div id="container">
       <%= yield %>
     </div>
-  
-    <% if development? %>
-      <div id="saving-instructions">
-        <p>Paste the following at the top of <i><%= params[:dashboard] %>.erb</i></p>
-        <textarea id="gridster-code"></textarea>
-      </div>
-      <a href="#saving-instructions" id="save-gridster">Save this layout</a>
-    <% end %>
+    <% else %>
+      <div id="iefail">
+        <div id="iefail-icon">
+          <i class="icon-twitter icon-rotate-180 text-error"></i>
+        </div>
+
+        <i class="icon-terminal icon-2x icon-border"></i> Relig does not support Internet Explorer. Please try again in <a href="http://browsehappy.com/">Chrome, Firefox, Opera, or Safari.</a>
+    </div>
+  <% end %>
   </body>
 </html>

@@ -16,6 +16,15 @@ $background-danger-color-1: #eeae32;
 $background-danger-color-2: #ff9618;
 $text-danger-color: #fff;
 
+$orange: #e47724;
+$light-blue: #67bcdb;
+$light-green: #7F9935;
+$green: #118C4E;
+$light-yellow: #ffd658;
+$red: #bd3939;
+$royal-purple: #673070;
+$royal-green: #397036;
+
 @-webkit-keyframes status-warning-background {
   0%   { background-color: $background-warning-color-1; }
   50%  { background-color: $background-warning-color-2; }
@@ -120,10 +129,10 @@ h3 {
   width: 100%!important;
   height: 100%;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 10px;
+  top: 10px;
   opacity: 0.1;
-  font-size: 275px;
+  font-size: 280px;
 }
 
 .list-nostyle {
@@ -245,6 +254,45 @@ h3 {
   padding-top: 5px;
 }
 
+// Relig extension styles
+
+.orange-bg {
+  background-color: $orange;
+}
+.light-blue-bg {
+  background-color: $light-blue;
+}
+.green-bg {
+  background-color: $green;
+}
+.light-green-bg {
+  background-color: $light-green;
+}
+.light-yellow-bg {
+  background-color: $light-yellow;
+}
+.red-bg {
+  background-color: $red;
+}
+.royal-purple-bg {
+  background-color: $royal-purple;
+}
+
+.text-error {
+    color: #9D261D;
+}
+
+#iefail {
+  text-align: center;
+
+  #iefail-icon {
+    font-size: 250px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Clearfix

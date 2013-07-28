@@ -1,0 +1,21 @@
+<% content_for :title do %>Religion on Twitter<% end %>
+<% colors = %w[red orange green light-blue light-yellow] %>
+
+<div class="gridster">
+  <ul>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div div class="royal-purple-bg" data-id="relig" data-view="Text" data-title="Relig" data-text="# of tweets worldwide on religious topics." data-moreinfo="Full of meaning. Deep. Serious. Legit."></div>
+      <i class="icon-double-angle-right icon-background"></i>
+    </li>
+    
+    <% TwitterJob::TERMS.each do |term| %>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div class="<%= colors.sample %>-bg" data-id="<%= term.downcase %>" data-view="Number" data-title="<%= term %>" data-moreinfo="In the Past Hour"></div>
+      <i class="icon-twitter icon-background"></i>
+    </li>
+
+    <% end %>
+  </ul>
+</div>
