@@ -15,7 +15,7 @@
     
     <% TwitterJob::TERMS.each do |term| %>
 
-    <li class="clickable" data-row="1" data-col="1" data-sizex="1" data-sizey="1" data-url="<%= url("list?term=#{term.downcase}") %>">
+    <li class="" data-row="1" data-col="1" data-sizex="1" data-sizey="1" data-url="<%= url("list?term=#{term.downcase}") %>">
       <div class="<%= colors.sample %>-bg" data-id="<%= term.downcase %>" data-view="Number" data-title="<%= term %>" data-moreinfo="In the Past Hour"></div>
       <i class="icon-twitter icon-background"></i>
     </li>
