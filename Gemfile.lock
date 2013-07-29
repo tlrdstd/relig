@@ -33,15 +33,18 @@ GEM
       eventmachine (~> 1.0)
       http_parser.rb (~> 0.5)
       simple_oauth (~> 0.1)
+    eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     hike (1.2.3)
+    http_parser.rb (0.5.3)
     http_parser.rb (0.5.3-x86-mingw32)
     multi_json (1.7.7)
     multipart-post (1.2.0)
+    newrelic_rpm (3.6.6.147)
     oj (2.1.4)
     rack (1.5.2)
     rack-protection (1.5.0)
@@ -85,6 +88,7 @@ GEM
       multi_json (~> 1.0)
       simple_oauth (~> 0.2)
     tzinfo (1.0.1)
+    yajl-ruby (1.1.0)
     yajl-ruby (1.1.0-x86-mingw32)
 
 PLATFORMS
@@ -94,5 +98,6 @@ DEPENDENCIES
   awesome_print
   browser
   dashing
+  newrelic_rpm
   oj
   tweetstream

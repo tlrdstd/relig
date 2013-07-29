@@ -1,3 +1,4 @@
 .bundle/
 history.yml
 .env
+bin/
