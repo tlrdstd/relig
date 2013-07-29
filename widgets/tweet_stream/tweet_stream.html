@@ -1,0 +1,9 @@
+<h1 class="title" data-bind="title"></h1>
+
+<ul class="tweet-stream">
+  <li data-foreach-tweet="tweets" class="tweet">
+    <p class="body" data-bind='tweet.body'></p>
+  </li>
+</ul>
+
+<p class="more-info" data-bind="moreinfo | raw"></p>

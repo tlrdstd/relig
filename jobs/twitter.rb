@@ -17,9 +17,7 @@ class TwitterJob
   def remember tweet
     @store << {
       timestamp: tweet.created_at,
-      name: tweet.user.name,
-      body: tweet.text,
-      avatar: tweet.user.profile_image_url_https
+      body: tweet.text
     }
   end
 
@@ -59,7 +57,7 @@ end
 SCHEDULER.every '10s' do
   @jobs.each_pair do |name, job|
     store = job.instance_variable_get(:@store)
-    send_event("#{name}-list", {comments: store[-10..-1] || store})
+    send_event("#{name}-list", {title: name, tweets: store[-50..-1] || store})
   end
 end
 
