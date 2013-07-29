@@ -1,3 +1,7 @@
 todo: persistence
 todo: list of tweets
-todo: setup separate prod/dev twitter accounts
+todo: setup separate prod/dev twitter accounts - https://support.twitter.com/forms/platform
+todo: use mixitup instead of gridster
+todo: use foreman ?
+todo: count tweets for multiple matches
+todo: use google analytics
